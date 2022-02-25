@@ -17,7 +17,14 @@ label{
     padding: 10px;
 }
 #contact{
-    width: 90%;
+    width: 100%;
+    padding: 10px;
+}
+.page{
+    margin-left: calc(var(--bs-gutter-x) * -.1);
+}
+.page2{
+    padding-left: calc(var(--bs-gutter-x) * .3);
 }
 .background{
     background: #eee;
@@ -32,9 +39,10 @@ label{
     height: 70%;
     background: rgb(188, 1, 76);
 }
-#details > div {
+/*#details > div {
     margin: 5px;
-}
+}*/
+
 #details > div svg {
     width: 25px;
     height: 25px;
@@ -65,8 +73,8 @@ label{
 #all{
     width: 320px;
     height: 480px;
-    margin: 20px;
     color: white;
+    margin-bottom: 50px;
     border-radius: 10%;
     overflow: hidden;
     position: relative;
@@ -94,7 +102,7 @@ label{
     box-sizing: border-box;
     margin: 0 auto;
     border-radius: 50%;
-    border: 6px solid #393939;
+    /*border: 6px solid #393939;*/
     height: 120px;
     width: 120px;
     display: flex;
@@ -134,9 +142,8 @@ label{
 .back {
     width: 320px;
     height: 480px;
-    margin: 20px;
     background: rgb(188, 1, 76);
-    border-radius: 25px;
+    border-radius: 10%;
     overflow: hidden;
     position: relative;
 }
@@ -171,8 +178,10 @@ label{
   align-items: center;
   color: white;
   z-index: 11;
-  filter: contrast(80%);
   text-transform: uppercase;
+}
+#allb{
+    text-transform: none ;
 }
 
 .webicon {

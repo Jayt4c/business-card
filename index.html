@@ -13,28 +13,28 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 ">
-                <h1>Business Card Design</h1>
+                <h1>Design your Business Card </h1>
             </div>
         </div>
     </div>
                                 <!-- Input Values -->
-    <div class="container-fluid d-flex flex-row-reverse row">
+    <div class="container-fluid d-flex flex-row-reverse row page">
         <div class="col-sm-12 col-md-6 background">
             <form id="cardInfo" class="">
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label" for="inputCompany">Company's Name</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="inputCompany" type="text" onkeyup="printCompany()" placeholder="Your company's name">    
+                        <input class="form-control" id="inputCompany" type="text" onkeyup="printCompanyB()" placeholder="Your company's name">    
                     </div>                   
                 </div>  
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label" for="inputMessage">TagLine</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="inputMessage" type="text" onkeyup="printMessage()" placeholder="Your company's TagLine">    
+                        <input class="form-control" id="inputMessage" type="text" onkeyup="printTagline()" placeholder="Your company's TagLine">    
                     </div>                   
                 </div>  
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputText">Heading-Align</label>
+                    <label class="col-sm-2 col-form-label" for="inputText">Header-Align</label>
                     <div class="col-sm-10">
                         <input class="btn btn-info" id="text-start" type="button" value="left" onclick="textAlign(this.id)">
                         <input class="btn btn-info" id="text-center" type="button" value="center" onclick="textAlign(this.id)">   
@@ -42,9 +42,9 @@
                     </div>                   
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputBg">Heading-color</label>
+                    <label class="col-sm-2 col-form-label" for="inputBg">Header-color</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="inputBg" type="color" value="#ffb74d" onchange="changeBg()" placeholder="Your company's TagLine">    
+                        <input class="form-control" id="inputBg" type="color" value="blue" onchange="changeBg()">    
                     </div>                   
                 </div>
                 <div class="form-group row">
@@ -60,7 +60,13 @@
                     </div>                   
                 </div>  
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputText">Details-Align</label>
+                    <label class="col-sm-2 col-form-label" for="avatarBg">Avatar Background</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="avatarBg" type="color" onchange="changeAvatarBg()">    
+                    </div>                   
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputText">Footer-Align</label>
                     <div class="col-sm-10">
                         <input class="btn btn-info" id="text-left" type="button" value="left" onclick="detailsAlign(this.id)">
                         <input class="btn btn-info" id="text-cent" type="button" value="center" onclick="detailsAlign(this.id)">   
@@ -68,7 +74,7 @@
                     </div>                   
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputBg">Details-color</label>
+                    <label class="col-sm-2 col-form-label" for="inputBg">Footer-color</label>
                     <div class="col-sm-10">
                         <input class="form-control" id="inputDetailsBg" type="color" value="#ffb74d" onchange="changeDetailsBg()" placeholder="Your company's TagLine">    
                     </div>                   
@@ -103,12 +109,23 @@
                         <input class="form-control" id="inputAddress" type="text" onkeyup="printAddress()" placeholder="Your Address">    
                     </div>                   
                 </div>
-                <!--<div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputWebsite">Webite</label>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputbWebsite">Webite</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="inputWebsite" type="text" onkeyup="printWebsite()" placeholder="Your Address">    
+                        <input class="form-control" id="inputbWebsite" type="text" onkeyup="printbWebsite()" placeholder="Your Web Address">    
                     </div>                   
-                </div>-->
+                </div>
+            </form><hr>
+
+                                                    <!-- BACK -->
+            <form id="cardInfo">
+                <h3>BACK</h3>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputbText">Text-color</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputbText" type="color" value="#262626" onchange="changeTextB()">    
+                    </div>                   
+                </div>  
                 <div class="form-group row">
                     <div class="col-sm-3 col-sm-offset">
                         <input value="submit" type="button" onclick="formSubmit()">    
@@ -117,51 +134,11 @@
                         <input value="reset" type="button" onclick="formReset()">    
                     </div>                   
                 </div>
-            </form><hr>
-
-                                                    <!-- BACK -->
-            <form id="cardInfo">
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputbBg">Heading</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputbBg" type="color" onchange="changebBg()" placeholder="Your company's TagLine">    
-                    </div>                   
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputbText">Text-color</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputbText" type="color" value="#262626" onchange="changebText()" placeholder="Your company's TagLine">    
-                    </div>                   
-                </div>  
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="filed">Change Avatar</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="filed" type="file" onchange="loadImg(event)">    
-                    </div>            
-                </div> 
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputFooterBg">Footer</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputFooterBg" type="color" value="#ffb74d" onchange="changeFooterBg()">    
-                    </div>                   
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputbWebsite">Webite</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputbWebsite" type="text" onkeyup="printbWebsite()" placeholder="Your Web Address">    
-                    </div>                   
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="avatarBg">Avatar Background</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="avatarBg" type="color" onchange="changeAvatarBg()">    
-                    </div>                   
-                </div>
             </form>
         </div>
 
                                 <!-- Output Values -->
-        <div class="col-sm-12 col-md-6 d-flex flex-column business-card start-0" >
+        <div class="col-sm-12 col-md-6 d-flex flex-column business-card start-0 page2" >
             <div class="col-sm-12 col-md-6" id="all">
                 <div id="b_card">
                     <h3 class="text-uppercase" id="outputCompany">Company Name</h3>
@@ -177,15 +154,14 @@
                         <p id="outputEmail" class="">Your Email</p>
                         <p id="outputTelephone" class="">Phone No</p>
                         <p id="outputAddress" class="">Address</p>
-                       <!-- <p id="outputWebsite" class="">Website</p> -->
                     </div>
                 </div>
             </div>
                      <!-- back -->
             <div class="back" id="footer">
                 <div class="top" id="top">
-                    <div id="allb">
-                        <div class="mt-5">
+                    <div>
+                        <div class="mt-5" id="allb">
                             <img src="TinyTake18-02-2022-01-13-26-removebg-preview.png">
                             <h3 id="outputbCompany">Company Name</h3>
                             <p id="outputbMessage">tagline goes here</p>

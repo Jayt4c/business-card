@@ -19,24 +19,28 @@ const website = document.getElementById("outputWebsite")
 const loadFile = (event) => {
     let image = document.getElementById("output");
     image.src = URL.createObjectURL(event.target.files[0]);
+    let images = document.getElementById("outputb");
+    images.src = URL.createObjectURL(event.target.files[0]);
 }
   
-function printCompany(){
+function printCompanyB(){
     company.innerHTML = inputCompany.value
     document.getElementById("outputbCompany").innerHTML = inputCompany.value;
 }
 
-function printMessage(){
+function printTagline(){
     message.innerHTML = inputMessage.value
     document.getElementById("outputbMessage").innerHTML = inputMessage.value;
 }
 
 function changeBg(){
     bgColor.style.background = background.value;
+    document.getElementById("top").style.background = background.value;
 }
 
 function changeDetailsBg(){
     details.style.background = detailsColor.value;
+    document.getElementById("footer").style.background = detailsColor.value;
 }
 
 function changeText(){
@@ -75,34 +79,18 @@ function printWebsite(){
     website.innerHTML = inputWebsite.value;
 }
 
+function changeAvatarBg(){
+    document.getElementById("webb").style.background = document.getElementById("avatarBg").value;
+    document.getElementById("output").style.background = document.getElementById("avatarBg").value;
+}
+
                             //BACK
-const loadImg = (event) => {
-    let images = document.getElementById("outputb");
-    images.src = URL.createObjectURL(event.target.files[0]);
-}
-
-function printbMessage(){
-    
-}
-
-function changebBg(){
-    document.getElementById("top").style.background = backgroundb.value;
-}
-
-function changebText(){
+function changeTextB(){
     document.getElementById("allb").style.color = Textb.value;
-}
-
-function changeFooterBg(){
-    document.getElementById("footer").style.background = document.getElementById("inputFooterBg").value;
 }
 
 function printbWebsite(){
     document.getElementById("outputbWebsite").innerHTML = inputbWebsite.value;
-}
-
-function changeAvatarBg(){
-    document.getElementById("webb").style.background = document.getElementById("avatarBg").value;
 }
 
             //BUTTON
