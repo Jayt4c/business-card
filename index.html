@@ -1,186 +1,145 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Card</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Business-Card Design</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12 ">
-                <h1>Design your Business Card </h1>
-            </div>
-        </div>
-    </div>
-                                <!-- Input Values -->
-    <div class="container-fluid d-flex flex-row-reverse row page">
-        <div class="col-sm-12 col-md-6 background">
-            <form id="cardInfo" class="">
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputCompany">Company's Name</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputCompany" type="text" onkeyup="printCompanyB()" placeholder="Your company's name">    
-                    </div>                   
-                </div>  
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputMessage">TagLine</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputMessage" type="text" onkeyup="printTagline()" placeholder="Your company's TagLine">    
-                    </div>                   
-                </div>  
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputText">Header-Align</label>
-                    <div class="col-sm-10">
-                        <input class="btn btn-info" id="text-start" type="button" value="left" onclick="textAlign(this.id)">
-                        <input class="btn btn-info" id="text-center" type="button" value="center" onclick="textAlign(this.id)">   
-                        <input class="btn btn-info" id="text-end" type="button" value="Right" onclick="textAlign(this.id)">     
-                    </div>                   
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputBg">Header-color</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputBg" type="color" value="blue" onchange="changeBg()">    
-                    </div>                   
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputText">Text-color</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputText" type="color" value="#262626" onchange="changeText()" placeholder="Your company's TagLine">    
-                    </div>                   
-                </div>   
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="file">Change Avatar</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="file" type="file" onchange="loadFile(event)">    
-                    </div>                   
-                </div>  
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="avatarBg">Avatar Background</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="avatarBg" type="color" onchange="changeAvatarBg()">    
-                    </div>                   
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputText">Footer-Align</label>
-                    <div class="col-sm-10">
-                        <input class="btn btn-info" id="text-left" type="button" value="left" onclick="detailsAlign(this.id)">
-                        <input class="btn btn-info" id="text-cent" type="button" value="center" onclick="detailsAlign(this.id)">   
-                        <input class="btn btn-info" id="text-right" type="button" value="Right" onclick="detailsAlign(this.id)">     
-                    </div>                   
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputBg">Footer-color</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputDetailsBg" type="color" value="#ffb74d" onchange="changeDetailsBg()" placeholder="Your company's TagLine">    
-                    </div>                   
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputName">Your Name</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputName" type="text" onkeyup="printName()" placeholder="Your Name">    
-                    </div>                   
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputJob">Occupation</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputJob" type="text" onkeyup="printJob()" placeholder="Your Occupation">    
-                    </div>                   
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputEmail">Your Email</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputEmail" type="text" onkeyup="printEmail()" placeholder="Your Email address">    
-                    </div>                   
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputTelephone">Phone No:</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputTelephone" type="tel" onkeyup="printTelephone()" placeholder="Your Phone no">    
-                    </div>                   
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputAddress">Address</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputAddress" type="text" onkeyup="printAddress()" placeholder="Your Address">    
-                    </div>                   
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputbWebsite">Webite</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputbWebsite" type="text" onkeyup="printbWebsite()" placeholder="Your Web Address">    
-                    </div>                   
-                </div>
-            </form><hr>
+					<!-- ***** Preloader Start ***** -->
+	<div id="js-preloader" class="js-preloader">
+		<div class="preloader-inner">
+			<span class="dot"></span>
+			<div class="dots">
+				<span></span>
+				<span></span>
+				<span></span>
+		  	</div>
+		</div>
+	</div>
+	  				<!-- ***** Preloader End ***** -->
+							<!--header start-->
+	<header class="header" id="header">
+		<nav class="header-navbar" id="header-navbar">
+			<span style="font-size: 30px; cursor: pointer;" class="openbtn" onclick="openNav()" >&#9776;</span>
+			<a href="#" class="profile-img" id="profile-img"><img src="images/mylogo.png" class="logo-img" id="logo-img" alt="logo"></a>
+			<div class="header-nav" id="header-nav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<ul class="header-navbar-list" id="header-navbar-list">
+					<li><a class="active" href="index.html" class="active">HOME</a></li>
+					<li><a href="vertical.html">VERTICAL</a></li>
+					<li><a href="horizontal.html">HORIZONTAL</a></li>
+					<li><a href="#contact">CONTACT</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+							   <!--header end-->
+							   <!--banner start-->
+	<section class="banner" id="banner">
+		<div class="container banner-text" id="banner-text">
+			<h3>welcome to</h3>
+			<h1>JWebDesign Business-Card</h1>
+			<h2>JWebDesign</h2>
+			<h2>Business-Card</h1>
+		</div>
+	</section>
+							   <!--banner start-->
+							   <!--section start-->
+	<section class="section">
+		<div class="boxes" id="boxes">
+			<div class="box" id="box">
+				<div class="divider-wrapper divider-one" id="divider-wrapper">
+					<i class="fa fa-laptop"></i>
+					<h2>Easy to use</h2>
+					<p>Navigate to your preferred card style and fill in the details. The result is easily seen as you are filing your details side by side with the form.</p>
+				</div>
+			</div>
+			<div class="box" id="box">
+				<div class="divider-wrapper divider-two" id="divider-wrapper">
+					<i class="fa fa-mobile"></i>
+					<h2>AD</h2>
+					<p>I can boost your brand by making a wonderful site with good user interface to convert audience into potential customers. <br> Contact-Me</p>
+				</div>
+			</div>
+			<div class="box" id="box">
+				<div class="divider-wrapper divider-three" id="divider-wrapper">
+					<i class="fa fa-life-ring"></i>
+					<h2>Others</h2>
+					<p>visit my portfolio</p>
+				</div>
+			</div>
+	</section>
+							   <!--section start-->
+							   <!--about start-->
+	<section class="about" id="about">
+		<div class="about-section" id="about-section">
+			<div class="logo-pic" id="logo-pic">
+				<img src="images/bg1.webp" class="about-img" alt="about img">
+			</div>
+			<div class="logo-pic about-text" id="logo-pic">
+				<h2>Business-Card</h2>
+				<p>Electronic business cards exist virtually and they are accessible to anyone with a smart device. If you don’t have your electronic business card yet, you can create one in seconds.</p>
+				<p>You can edit your card in seconds and share it with anyone via email, social media, and other means in a matter of seconds! You don’t even have to make physical contact with someone to share your card.</p>
+				<a href="#contact" class="btn btn-default">LEARN MORE</a>
+			</div>
+		</div>
+	</section>
+							   <!--about start-->
+							   <!-- contact section -->
+	<div id="contact">
+		<div class="">
+			<div class="contact-heading">
+				<h2>Get in touch</h2>
+				
+				<p>You can contact me directly by sending a feedback, phone call, text or email me. </p>
+			</div>
+			<div>
+				<div class="contact-details">
+					<form class="form" id="form" action="#" method="post" role="form">
+						<div class="form-left" id="form-left">
+                        	<label class="label" for="name">NAME</label><br>
+                        	<input name="name" type="text" class="form-control" id="name"><br>
+                      		<label class="label" for="email">EMAIL</label><br>
+                        	<input name="email" type="email" class="form-control" id="email">
+						</div>
+						<div class="">
+							<label class="label" for="message">MESSAGE</label>
+							<textarea name="message" rows="6" id="message"></textarea>
+						</div>
+					</form>
+					<div class="button-sub">
+						<button type="submit" name="submit" class="btn-submit">SEND</button>
+					</div>
+				</div>
+				<div class="contact-info">
+					<div class="myDetails">
+						<h3>Email</h3>
+						<p>jwebdev53@gmail.com</p>
+					</div>
+					<div>
+						<h3>Phone No</h3>
+						<p>+2348063209508</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>		
 
-                                                    <!-- BACK -->
-            <form id="cardInfo">
-                <h3>BACK</h3>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="inputbText">Text-color</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="inputbText" type="color" value="#262626" onchange="changeTextB()">    
-                    </div>                   
-                </div>  
-                <div class="form-group row">
-                    <div class="col-sm-3 col-sm-offset">
-                        <input value="submit" type="button" onclick="formSubmit()">    
-                    </div>   
-                    <div class="col-sm-3">
-                        <input value="reset" type="button" onclick="formReset()">    
-                    </div>                   
-                </div>
-            </form>
-        </div>
+						<!-- ***** Footer Start ***** -->
+  	<footer>
+		<div class="footer">
+			<div class="footer-text">
+				<p>Copyright &copy; 2022 JWebDev -
+				<a rel="nofollow" href="" class="tm-text-link" target="users">JT</a></p>
+			</div>
+		</div>
+	</footer>
 
-                                <!-- Output Values -->
-        <div class="col-sm-12 col-md-6 d-flex flex-column business-card start-0 page2" >
-            <div class="col-sm-12 col-md-6" id="all">
-                <div id="b_card">
-                    <h3 class="text-uppercase" id="outputCompany">Company Name</h3>
-                    <p id="outputMessage">company's TagLine</p>
-                </div>
-                <div class="avatar">
-                    <div class="img"><img id="output" src="mylogo.png" alt=""></div>
-                    <p id="outputName" class="name">Your Name</p>
-                    <p id="outputJob" class="job">Occupation</p>
-                </div>
-                <div id="details">
-                    <div class="contact" id="contact">
-                        <p id="outputEmail" class="">Your Email</p>
-                        <p id="outputTelephone" class="">Phone No</p>
-                        <p id="outputAddress" class="">Address</p>
-                    </div>
-                </div>
-            </div>
-                     <!-- back -->
-            <div class="back" id="footer">
-                <div class="top" id="top">
-                    <div>
-                        <div class="mt-5" id="allb">
-                            <img src="TinyTake18-02-2022-01-13-26-removebg-preview.png">
-                            <h3 id="outputbCompany">Company Name</h3>
-                            <p id="outputbMessage">tagline goes here</p>
-                        </div>                       
-                    </div>
-                </div>
-                <div class="webicon" id="">
-                    <div class="web" id="webb">
-                        <img id="outputb" src="mylogo.png" alt="">
-                    </div>
-                </div>
-                <p id="outputbWebsite">Webite</p>
-            </div>
-        </div>
-        
-       
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="script/script.js"></script>
+	<script src="script/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Card</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/horizontal.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://kit.fontawesome.com/8cd9d03787.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    							<!--header start-->
+	<header class="header" id="header">
+		<nav class="header-navbar" id="header-navbar">
+			<span style="font-size: 30px; cursor: pointer;" class="openbtn" id="openbtn" onclick="openNav()" >&#9776;</span>
+			<a href="#" class="profile-img" id="profile-img"><img src="images/mylogo.png" class="logo-img" id="logo-img" alt="logo"></a>
+			<div class="header-nav" id="header-nav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<ul class="header-navbar-list" id="header-navbar-list">
+					<li><a class="active" href="index.html" class="active">HOME</a></li>
+					<li><a href="vertical.html">VERTICAL</a></li>
+					<li><a href="horizontal.html">HORIZONTAL</a></li>
+					<li><a href="#contact">CONTACT</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+							   <!--header end-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 topic">
+                <h1>Design your Horizontal Business Card </h1>
+            </div>
+        </div>
+    </div>
+                                <!-- Input Values -->
+    <div class="container-fluid d-flex flex-row-reverse row page cont">
+        <div class="col-sm-12 col-md-6 background"><h3>Front</h3><hr>
+            <form id="cardInfo" class="">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputCompany">Company's Name</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputCompany" type="text" onkeyup="printCompanyB()" placeholder="Your company's name">    
+                    </div>                   
+                </div>               
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="file">Change Avatar</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="file" type="file" onchange="loadFile(event)">    
+                    </div>                   
+                </div>  
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputBg">Business-Card Background</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputBg" type="color" value="blue" onchange="changeFrontBg()">    
+                    </div>                   
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputText">Text Color</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputText" type="color" value="#262626" onchange="change_Text()" placeholder="Your company's TagLine">    
+                    </div>                   
+                </div>  
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputBg">Lines-color</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputLineBg" type="color" value="blue" onchange="changeLineBg()">    
+                    </div>                   
+                </div> 
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputBg">Footer-Background</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputWebBg" type="color" value="blue" onchange="changeWebBg()">    
+                    </div>                   
+                </div><br>
+                <hr>
+                <h3>Back</h3>
+                <hr>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputMessage">TagLine</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputMessage" type="text" onkeyup="printTagline()" placeholder="Your company's TagLine">    
+                    </div>                   
+                </div>   
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputName">Your Name</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputName" type="text" onkeyup="printNameH()" placeholder="Your Name">    
+                    </div>                   
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputJob">Occupation</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputJob" type="text" onkeyup="printJobH()" placeholder="Your Occupation">    
+                    </div>                   
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputEmail">Your Email</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputEmail" type="text" onkeyup="printEmailH()" placeholder="Your Email address">    
+                    </div>                   
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputTelephone">Phone No:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputTelephone" type="tel" onkeyup="printTelephoneH()" placeholder="Your Phone no">    
+                    </div>                   
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputAddress">Address</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputAddress" type="text" onkeyup="printAddressH()" placeholder="Your Address">    
+                    </div>                   
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputbWebsite">Webite</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputWebsite" type="text" onkeyup="printWebsiteH()" placeholder="Your Web Address">    
+                    </div>                   
+                </div>
+            </form><hr>
+
+                                                    <!-- BACK -->
+            <form id="cardInfo">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="inputbText">Details color</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputTextH" type="color" value="#262626" onchange="changeTextH()">    
+                    </div>                   
+                </div>  
+                <div class="form-group row">
+                    <div class="col-sm-3 col-sm-offset">
+                        <input value="submit" type="button" onclick="formSubmit()">    
+                    </div>   
+                    <div class="col-sm-3">
+                        <input value="reset" type="button" onclick="formReset()">    
+                    </div>                   
+                </div>
+            </form>
+        </div>
+
+                                <!-- Output Values -->
+        <div class="col-sm-12 col-md-6 d-flex flex-column business-card start-0 page2" >
+            <div class="col-sm-12 col-md-6" id="front">
+                <span id="line1"></span>
+                <span id="line2"></span>
+                <p class="text-uppercase" id="outputCompany">Company Name</p>
+                <span id="line3"></span><span id="line4"></span>
+                <div class="foot" id="foot">
+                    <span id="emailB"><p id="outputWebsite">Website</p></span>
+                    
+                </div>
+                <img id="output" src="mylogo.png" alt="">
+            </div>
+
+                              <!-- back -->
+            <div id="back">
+            <div>
+                <img id="outputb" class="outputImg" src="mylogo.png" alt="">
+                <p id="outputbCompany"id="outputCompany">COMPANY NAME</p>
+                <h3 class="tagline" id="outputMessage">company's TagLine</h3>
+            </div>
+            <span id="line5"></span>
+            <div class="details">
+                <div class="name">
+                    <h2 id="nameB">YOUR NAME</h2>
+                    <p id="jobH">Occupation</p>
+                </div>
+                <div class="contact" id="contactH">
+                    <div>
+                        <i class="fa-solid fa-envelope" id="link"></i>
+                        <p id="emailH"><a href="mailto:">Your email</a></p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-phone" id="link"></i>
+                        <p id="phoneH">Your phone no</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-location-dot" id="link"></i>
+                        <p id="addressH"><a href="" target="_blank">Address</a></p>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-chrome" id="link"></i>
+                        <p id="websiteH">Website</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       
+    </div>
+    							   <!-- contact section -->
+	<div id="contact">
+		<div class="">
+			<div class="contact-heading">
+				<h2>Get in touch</h2>
+				
+				<p>You can contact me directly by sending a feedback, phone call, text or email me. </p>
+			</div>
+			<div>
+				<div class="contact-details">
+					<form class="form" id="form" action="#" method="post" role="form">
+						<div class="form-left" id="form-left">
+                        	<label class="label" for="name">NAME</label><br>
+                        	<input name="name" type="text" class="form-control" id="name"><br>
+                      		<label class="label" for="email">EMAIL</label><br>
+                        	<input name="email" type="email" class="form-control" id="email">
+						</div>
+						<div class="">
+							<label class="label" for="message">MESSAGE</label>
+							<textarea name="message" rows="6" id="message"></textarea>
+						</div>
+					</form>
+					<div class="button-sub">
+						<button type="submit" name="submit" class="btn-submit">SEND</button>
+					</div>
+				</div>
+				<div class="contact-info" id="contact-infor">
+					<div class="myDetails">
+						<h3>Email</h3>
+						<p>jwebdev53@gmail.com</p>
+					</div>
+					<div>
+						<h3>Phone No</h3>
+						<p>+2348063209508</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>		
+
+    						<!-- ***** Footer Start ***** -->
+  	<footer>
+		<div class="footer">
+			<div class="footer-text">
+				<p>Copyright &copy; 2022 JWebDev -
+				<a rel="nofollow" href="" class="tm-text-link" target="users">JT</a></p>
+			</div>
+		</div>
+	</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="script/script.js"></script>
+    <script src="script/horizontal.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+@media (min-width: 570px){
+    .openbtn, .closebtn {
+        display: none;
+    }
+}
+@media (max-width: 570px){  
+                        /* header */
+    #header-nav{
+        width: 110%;
+        background: rgba(0,0,0,0.9);
+        height: 100vh;
+        display: none;
+    }
+    #header-navbar-list {
+        position: relative;
+        flex-direction: column;
+        top: -3em;
+        text-align: center;
+    }
+    #header-navbar-list li {
+        padding-bottom: 8em;
+    }
+    #header{
+        margin: 0;
+        padding: 0;
+        z-index: 1;
+        height: 100vh;
+        position: fixed;
+        transition: 0.5s;
+        overflow-x: hidden;
+    }
+    #header-navbar {
+        top: 0;
+        max-width: 100%;
+        display: inherit;
+    }
+    #logo-img {
+        width: 15%;
+        margin-top: 3%;
+    }
+                            /* banner */
+    #banner{
+        min-height: 300px;
+    }
+    #banner-text {
+        margin: 25% 0 0 30%;
+    }
+    #banner-text h2 {
+        display: block;
+    }
+    #banner-text h1 {
+        display: none;
+    }
+    #boxes{
+        margin: 0;
+        flex-wrap: wrap;
+    }
+    #box{
+        width: 45%;
+        margin: -5% 0% 5% 3%;
+    }
+    #divider-wrapper {
+        padding: 0;
+        padding-bottom: 10px;
+    }
+    .divider-three {
+        display: none;
+    }
+                        /* About */
+    #about {
+        width: 80%;
+        margin: 4% 0 0 10%;
+    }
+    #about-section {
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 35em;
+        padding: 10px;
+    }
+    #logo-pic {
+        width: 100%;
+        padding: 0;
+    }
+                        /* Form */
+    #form {
+        flex-direction: column;
+    }
+    #form-left {
+        width: 95%;
+    }
+    #contact .form-control {
+        width: 100%;
+    }
+    #form textarea {
+        width: 95%;
+    }
+    .btn-submit {
+        margin-left: 30%;
+    }
+                            /* contact */
+    .contact-info {
+        justify-content: space-between;
+        align-items: center;
+    }
+    .myDetails{
+        margin-right: 30px;
+    }
+    .footer {
+        margin: 50px 10% 25px 10%;
+    }
+
+    /* Vertical */
+    .topic {
+        padding-top: 20%;
+    }
+}
