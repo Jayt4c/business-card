@@ -82,6 +82,7 @@
                         /* Form */
     #form {
         flex-direction: column;
+        padding-left: 8%;
     }
     #form-left {
         width: 95%;
@@ -90,15 +91,16 @@
         width: 100%;
     }
     #form textarea {
-        width: 95%;
+        width: 90%;
     }
     .btn-submit {
-        margin-left: 30%;
+        margin-left: 35%;
     }
                             /* contact */
     .contact-info {
         justify-content: space-between;
         align-items: center;
+        padding: 20px 20px 0 20px;
     }
     .myDetails{
         margin-right: 30px;
